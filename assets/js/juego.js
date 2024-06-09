@@ -9,6 +9,7 @@ let deck = [];
 const types = ['C', 'D', 'S', 'H'];
 const specials = ['A', 'J', 'Q', 'K'];
 
+// This function creates a new deck
 const createDeck = () => {
   for (let i = 2; i <= 10; i++) {
     for (let type of types) {
@@ -22,10 +23,26 @@ const createDeck = () => {
     }
   }
 
-  console.log("Before shuffle", deck);
+  // console.log("Before shuffle", deck);
   deck = _.shuffle(deck);
   console.log("After shuffle", deck);
   return deck;
 }
 
 createDeck();
+
+// This function allows me to hit a card
+const hitCard = () => {
+  if (deck.length === 0) {
+    throw 'No more cards available';
+  }
+  const card = deck.pop();
+
+  console.log(deck);
+  console.log(card);
+  return card;
+}
+
+for (let i = 0; i <= 100; i++) {
+  hitCard();
+}
