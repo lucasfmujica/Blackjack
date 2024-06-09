@@ -43,6 +43,14 @@ const hitCard = () => {
   return card;
 }
 
-for (let i = 0; i <= 100; i++) {
-  hitCard();
+// for (let i = 0; i <= 100; i++) {
+//   hitCard();
+// }
+
+const cardValue = (card) => {
+  const value = card.substring(0, card.length - 1);
+  return (isNaN(value)) ? (value === 'A') ? 11 : 10 : value * 1;
 }
+
+const value = cardValue(hitCard());
+console.log(value);
